@@ -15,8 +15,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (nombre && fechaHora) {
 
-      // Crear una tarjeta de cita y agregarla al div de citas
-
+      const hora = new Date(fechaHora).toLocaleTimeString()
+      const fecha = new Date(fechaHora).toLocaleDateString()
       const citaDiv = document.createElement('div');
 
       citaDiv.className = 'cita';
@@ -24,9 +24,11 @@ document.addEventListener('DOMContentLoaded', () => {
       citaDiv.innerHTML = `
 
               <h2>Nombre: ${nombre}</h2>
-
-              <p>Fecha y Hora: ${fechaHora}</p>
-
+              <ul>
+              <li>Fecha: ${fecha}</li>
+              <li>Hora: ${hora}</li>
+              </ul>
+              
           `;
 
       citasDiv.appendChild(citaDiv);
