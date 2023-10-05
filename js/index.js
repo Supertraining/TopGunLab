@@ -1,30 +1,25 @@
 document.addEventListener('DOMContentLoaded', () => {
   const citasDiv = document.getElementById('citas');
   const formulario = document.getElementById('formulario');
+  const nombreInput = document.getElementById('nombre');
+  const fechaHoraInput = document.getElementById('fechaHora');
+  const duracionCita = 5000; 
 
-  const agregarCitaBtn = document.getElementById('agregarCitaBtn');
+  formulario.addEventListener('submit', (event) => {
+      event.preventDefault();
 
+      // Obtiene datos del formulario
+      const nombre = nombreInput.value;
+      const fechaHora = fechaHoraInput.value;
 
-  agregarCitaBtn.addEventListener('click', () => {
-
-    const nombre = document.getElementById('nombre').value;
-
-    const fechaHora = document.getElementById('fechaHora').value;
-
-    if (nombre && fechaHora) {
-
-      // Crear una tarjeta de cita y agregarla al div de citas
-
-      const citaDiv = document.createElement('div');
-
-      citaDiv.className = 'cita';
-
-      citaDiv.innerHTML = `
-
+      // Verificación de ingreso de datos
+      if (nombre && fechaHora) {
+          // Creación de la cita
+          const citaDiv = document.createElement('div');
+          citaDiv.className = 'cita';
+          citaDiv.innerHTML = `
               <h2>Nombre: ${nombre}</h2>
-
               <p>Fecha y Hora: ${fechaHora}</p>
-
           `;
           citasDiv.appendChild(citaDiv);
 
@@ -47,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   setTimeout(() => {
       const nuevoUsuario = {
-          nombre: '',
+          nombre: 'Nuevo Usuario',
           fechaHora: '2023-10-05T14:00'
       };
       cambiarUsuario(nuevoUsuario);
