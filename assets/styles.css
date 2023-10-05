@@ -1,0 +1,27 @@
+h1 {
+  text-align: center;
+}
+
+.form-container{
+display: flex;
+justify-content: center;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+}
+
+.cita {
+
+  border: 1px solid #ccc;
+
+  margin: 10px;
+
+  padding: 10px;
+
+  width: 300px;
+
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+}
