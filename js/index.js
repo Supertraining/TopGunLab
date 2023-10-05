@@ -2,8 +2,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const citasDiv = document.getElementById('citas');
   const formulario = document.getElementById('formulario');
 
-  const citasDiv = document.getElementById('citas');
-
   const agregarCitaBtn = document.getElementById('agregarCitaBtn');
 
 
